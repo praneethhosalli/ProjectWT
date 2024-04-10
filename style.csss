@@ -1,0 +1,162 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styles */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #232F3E;
+    color: #FFF;
+    padding: 20px;
+  }
+  
+  header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 16px; 
+  }
+  
+  nav ul li a:hover {
+    color: #FF9900;
+  }
+  
+  .search {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .search input {
+    padding: 10px;
+    width: 300px;
+    border: none;
+  }
+  
+  .search button {
+    padding: 10px 20px;
+    background-color: #FF9900;
+    width: 150px;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+  }
+  
+  .search button:hover {
+    background-color: #FFB366;
+  }
+  
+  /* Main content styles */
+  main {
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensure relative positioning */
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  form input[type="text"],
+  form input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #FF9900;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: #FFB366;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #232F3E;
+    color: #FFF;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Autocomplete options styles */
+  .autocomplete-options {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1;
+    width: calc(100% - 2px); /* Adjusted width to match form */
+    left: 1px; /* Adjusted left position */
+    top: calc(100% + 2px); /* Adjusted top position */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .autocomplete-options div {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .autocomplete-options div:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Position autocomplete options for city input */
+  #city + .autocomplete-options {
+    top: calc(100% + 2px);
+    left: 0; /* Adjusted left position */
+  }
+  
+  /* Position autocomplete options for state input */
+  #state + .autocomplete-options {
+    top: calc(100% + 2px);
+    left: 0; /* Adjusted left position */
+  }
+  
