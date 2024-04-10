@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile - AmazonForest.in</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="http://surl.li/shxgi" type="image/png">
+</head>
+<body>
+  <header>
+    <h1>AmazonForest.in</h1>
+    <nav>
+      <ul>
+        <li><a href="myprofile.html">My Profile</a></li> 
+        <!-- Other navigation links -->
+      </ul>
+    </nav>
+    <div class="search">
+      <input type="text" placeholder="Search...">
+      <button>Search</button>
+    </div>
+  </header>
+  <main>
+    <h2>Welcome to Your Amazon Profile</h2>
+    <form action="#" method="post">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="phone">Your Phone No:</label>
+      <input type="tel" id="phone" name="phone" required>
+      
+      <label for="flatno">Flat No:</label>
+      <input type="text" id="flatno" name="flatno">
+      
+      <label for="houseno">House No:</label>
+      <input type="text" id="houseno" name="houseno">
+      
+      <label for="area">Area:</label>
+      <input type="text" id="area" name="area">
+      
+      <label for="landmark">Landmark:</label>
+      <input type="text" id="landmark" name="landmark">
+      
+      <label for="pincode">Pincode:</label>
+      <input type="text" id="pincode" name="pincode">
+      
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" oninput="showCityOptions(this.value)" autocomplete="off">
+      <div id="cityOptions" class="autocomplete-options"></div>
+      
+      <label for="state">State:</label>
+      <input type="text" id="state" name="state" oninput="showStateOptions(this.value)" autocomplete="off">
+      <div id="stateOptions" class="autocomplete-options"></div>
+      
+      <button type="submit">Update Profile</button>
+    </form>
+  </main>
+  <footer>
+    <!-- Your footer content here -->
+  </footer>
+
+  <script>
+    const indianCities = [
+        "Mumbai", "Delhi", "Bangalore", "Hyderabad", "Ahmedabad", "Chennai", "Kolkata", "Surat", "Pune", "Jaipur",
+        "Lucknow", "Kanpur", "Nagpur", "Visakhapatnam", "Indore", "Thane","Tandur", "Bhopal", "Patna", "Vadodara", "Ghaziabad",
+        "Ludhiana", "Agra", "Nashik", "Ranchi", "Faridabad", "Meerut", "Rajkot", "Kalyan-Dombivali", "Vasai-Virar", "Varanasi",
+        "Srinagar", "Aurangabad", "Dhanbad", "Amritsar","Royala Cheruvu", "Navi Mumbai", "Allahabad", "Howrah", "Ranchi", "Gwalior", "Jabalpur",
+        "Coimbatore", "Vijayawada", "Jodhpur", "Madurai", "Raipur", "Kota", "Guwahati", "Chandigarh", "Solapur", "Hubli-Dharwad"
+    ];
+
+    const indianStates = [
+        "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh",
+        "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram",
+        "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand",
+        "West Bengal"
+    ];
+
+    function showCityOptions(input) {
+        const options = document.getElementById("cityOptions");
+        options.innerHTML = "";
+        const filteredCities = indianCities.filter(city => city.toLowerCase().startsWith(input.toLowerCase()));
+        filteredCities.forEach(city => {
+            const option = document.createElement("div");
+            option.textContent = city;
+            option.addEventListener("click", () => {
+                document.getElementById("city").value = city;
+                options.innerHTML = "";
+            });
+            options.appendChild(option);
+        });
+    }
+
+    function showStateOptions(input) {
+        const options = document.getElementById("stateOptions");
+        options.innerHTML = "";
+        const filteredStates = indianStates.filter(state => state.toLowerCase().startsWith(input.toLowerCase()));
+        filteredStates.forEach(state => {
+            const option = document.createElement("div");
+            option.textContent = state;
+            option.addEventListener("click", () => {
+                document.getElementById("state").value = state;
+                options.innerHTML = "";
+            });
+            options.appendChild(option);
+        });
+    }
+  </script>
+</body>
+</html>
